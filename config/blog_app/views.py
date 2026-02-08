@@ -27,8 +27,8 @@ def home_view(request):
                     send_mail(
                         sujet,
                         corps_message,
-                        None, 
-                        ['djibrila6299@gmail.com'], 
+                        settings.EMAIL_HOST_USER,  # L'expéditeur (TOI, obligatoire pour Gmail)
+                        [settings.EMAIL_HOST_USER], 
                         fail_silently=False,
                     )
                     print("Mail envoyé avec succès !")
