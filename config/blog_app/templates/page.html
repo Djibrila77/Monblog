@@ -12,7 +12,12 @@
     <script src="{% static 'script.js' %}"></script>
     <header>
         <h3>Diallo Djibrila</h3>
-        <nav>
+        <div class="burger" onclick="toggleMenu()">
+            <div class="barre"></div>
+            <div class="barre"></div>
+            <div class="barre"></div>
+        </div>
+        <nav id="nav-menu">
             
             <a href="#a-propos">À propos</a>
             <a href="#open-source">Open Source</a>
@@ -92,13 +97,17 @@
         <h1>Contactez-nous!</h1>
         <div class="footer">
             <div>
-                <h4>Abonnez-vous à la newsletter</h4>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ newsletter_form.as_p }}
-                    
-                    <button type="submit" name="newsletter_submit">Envoyer</button>
-                </form>
+                <div class="newletter">
+                    <h4>Abonnez-vous à la newsletter</h4>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ newsletter_form.as_p }}
+                        
+                        <button type="submit" name="newsletter_submit">Envoyer</button>
+                    </form>
+
+                </div>
+               
                 <div class="infos">
                     <div class="info1">
                         
@@ -139,7 +148,14 @@
 
         </div>   
     </section>
+<script>
+    function toggleMenu() {
+        const nav = document.getElementById('nav-menu');
+        // On ajoute ou on enlève la classe 'active' à chaque clic
+        nav.classList.toggle('active');
+    }
 
-    
+</script>
+   
 </body>
 </html>

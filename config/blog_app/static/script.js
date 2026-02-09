@@ -1,8 +1,10 @@
 
+
 window.onbeforeunload = function () {
     window.scrollTo(0, 0);
 };
-        function toggleText(btn) {
+
+function toggleText(btn) {
     // On trouve l'extrait et le texte complet dans la même carte
     const parent = btn.parentElement;
     const extrait = parent.querySelector('.extrait');
